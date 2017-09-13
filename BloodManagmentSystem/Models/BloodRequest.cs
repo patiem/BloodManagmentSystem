@@ -8,7 +8,7 @@ namespace BloodManagmentSystem.Models
         public BloodType BloodType { get; set; }
         public DateTime DueDate { get; set; }
         public string City { get; set; }
-        public BloodBank Type { get; set; }
+        public BloodBank Bank { get; set; }
 
     }
 }
