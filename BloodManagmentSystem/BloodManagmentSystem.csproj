@@ -210,8 +210,16 @@
     <Compile Include="Migrations\201708311209597_InitialMigration.Designer.cs">
       <DependentUpon>201708311209597_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709131229319_AddBloodRequestAndBloodBank.cs" />
+    <Compile Include="Migrations\201709131229319_AddBloodRequestAndBloodBank.Designer.cs">
+      <DependentUpon>201709131229319_AddBloodRequestAndBloodBank.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\BloodBank.cs" />
+    <Compile Include="Models\BloodRequest.cs" />
+    <Compile Include="Models\BloodType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -296,6 +304,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708311209597_InitialMigration.resx">
       <DependentUpon>201708311209597_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709131229319_AddBloodRequestAndBloodBank.resx">
+      <DependentUpon>201709131229319_AddBloodRequestAndBloodBank.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
