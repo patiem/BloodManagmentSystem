@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BloodManagmentSystem.Models
+namespace BloodManagmentSystem.ViewModel
 {
     public class EmailFormModel
     {
