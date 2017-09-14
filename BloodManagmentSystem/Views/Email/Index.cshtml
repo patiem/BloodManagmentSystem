@@ -1,0 +1,38 @@
+﻿@model BloodManagmentSystem.Models.EmailFormModel
+
+@{
+    ViewBag.Title = "Email";
+}
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h4>Sample email</h4>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FormName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FormName , new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FormName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FormEmail, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FormEmail , new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FormEmail)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Message , new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Message)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Send" class="btn btn-default" />
+        </div>
+    </div>
+}
