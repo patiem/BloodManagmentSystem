@@ -1,8 +1,7 @@
-﻿using BloodManagmentSystem.Models;
-using System.Net.Mail;
+﻿using BloodManagmentSystem.Services;
+using BloodManagmentSystem.ViewModel;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using BloodManagmentSystem.ViewModel;
 
 namespace BloodManagmentSystem.Controllers
 {
@@ -16,30 +15,14 @@ namespace BloodManagmentSystem.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Index(EmailFormModel emailForm)
+        public async Task<ActionResult> Index(EmailFormModel model)
         {
             if (!ModelState.IsValid)
-            {
-                return View(emailForm);
-            }
-            var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
-            var message = new MailMessage();
-            message.To.Add(new MailAddress(emailForm.FormEmail));
-            message.From = new MailAddress(emailForm.FormEmail, emailForm.FormName);
-            message.Subject = "Test Mail from BMS";
-            message.Body = string.Format(body, emailForm.FormName, emailForm.FormEmail, emailForm.Message);
-            message.IsBodyHtml = true;
+                return View(model);
 
-            using (var smtp = new SmtpClient())
-            {
-                await smtp.SendMailAsync(message);
-                return RedirectToAction("Sent");
-            }
-        }
-
-        public ActionResult Sent()
-        {
-            return View();
+            var emailService = new MyEmailService();
+            await emailService.SendEmailAsync(model.To, model.Message, model.Subject);
+            return RedirectToAction("Index");
         }
     }
 }
