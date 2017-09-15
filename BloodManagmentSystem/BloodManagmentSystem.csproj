@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201709131229319_AddBloodRequestAndBloodBank.Designer.cs">
       <DependentUpon>201709131229319_AddBloodRequestAndBloodBank.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.cs" />
+    <Compile Include="Migrations\201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.Designer.cs">
+      <DependentUpon>201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -307,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709131229319_AddBloodRequestAndBloodBank.resx">
       <DependentUpon>201709131229319_AddBloodRequestAndBloodBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.resx">
+      <DependentUpon>201709150828445_AddDataAnnotationsForBloodBankAndBloodRequest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
