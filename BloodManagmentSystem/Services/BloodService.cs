@@ -1,5 +1,5 @@
-﻿using BloodManagmentSystem.Controllers;
-using BloodManagmentSystem.Repositories;
+﻿using BloodManagmentSystem.Repositories;
+using BloodManagmentSystem.ViewModels;
 
 namespace BloodManagmentSystem.Services
 {
@@ -12,7 +12,7 @@ namespace BloodManagmentSystem.Services
             _repo = repo;
         }
 
-        public object Get()
+        public BloodRequestFormViewModel Get()
         {
             return _repo.Get();
         }

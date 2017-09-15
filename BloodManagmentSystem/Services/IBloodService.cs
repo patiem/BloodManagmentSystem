@@ -1,8 +1,10 @@
-﻿namespace BloodManagmentSystem.Services
+﻿using BloodManagmentSystem.ViewModels;
+
+namespace BloodManagmentSystem.Services
 {
     public interface IBloodService
     {
-        object Get();
+        BloodRequestFormViewModel Get();
         void Add();
     }
 }

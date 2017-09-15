@@ -15,7 +15,7 @@ namespace BloodManagmentSystem.Controllers
         // GET: BloodRequest
         public ActionResult Create()
         {
-            return View();
+            return View(_service.Get());
         }
 
 //        public ActionResult Create()

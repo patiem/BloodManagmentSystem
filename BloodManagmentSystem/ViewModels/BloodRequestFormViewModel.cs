@@ -10,7 +10,8 @@ namespace BloodManagmentSystem.ViewModels
     {
         public BloodType BloodType { get; set; }
         public DateTime DueDate { get; set; }
-        public string Bank { get; set; }
+        public int Bank { get; set; }
         public string City { get; set; }
+        public IEnumerable<BloodBank> Banks { get; set; }
     }
 }
