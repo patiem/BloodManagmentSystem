@@ -314,6 +314,7 @@
     <Content Include="Views\Donor\Create.cshtml" />
     <Content Include="Views\Email\Index.cshtml" />
     <Content Include="Views\Email\Sent.cshtml" />
+    <Content Include="Views\Email\email-request.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
