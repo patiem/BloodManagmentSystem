@@ -8,7 +8,7 @@
 <form>
     <div class="form-group">
         @Html.LabelFor(m => m.BloodType)
-        @Html.TextBoxFor(m => m.BloodType, new { @class = "form-control" })
+        @Html.EnumDropDownListFor(m => m.BloodType, "Select Blood Type", new { @class="form-control"}) 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.DueDate)
@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Bank)
-        @Html.DropDownListFor(m => m.Bank, new SelectList(Model.Banks, "Id", "Name"))
+        @Html.DropDownListFor(m => m.Bank, new SelectList(Model.Banks, "Id", "Name"), "Select Blood Bank", new { @class="form-control"})
     </div> 
     <div class="form-group">
         @Html.LabelFor(m => m.City)
