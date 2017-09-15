@@ -1,4 +1,5 @@
-﻿using BloodManagmentSystem.Models;
+﻿using System.Linq;
+using BloodManagmentSystem.Models;
 using BloodManagmentSystem.ViewModels;
 
 namespace BloodManagmentSystem.Repositories
@@ -11,9 +12,14 @@ namespace BloodManagmentSystem.Repositories
         {
             _context = new ApplicationDbContext();
         }
+
         public BloodRequestFormViewModel Get()
         {
-            throw new System.NotImplementedException();
+            var viewModel = new BloodRequestFormViewModel
+            {
+                Banks = _context.Banks.ToList()
+            };
+            return viewModel;
         }
 
         public void Add()
