@@ -7,9 +7,9 @@ namespace BloodManagmentSystem.Migrations
     {
         public override void Up()
         {
-            Sql("INSERT INTO BloodBanks (Id, Name, City) VALUES (1, 'RCK Krakow', 'Cracow')");
-            Sql("INSERT INTO BloodBanks (Id, Name, City) VALUES (2, 'RCK Katowice', 'Katowice')");
-            Sql("INSERT INTO BloodBanks (Id, Name, City) VALUES (3, 'RCK Warszawa', 'Warsow')");
+            Sql("INSERT INTO BloodBanks (Name, City) VALUES ('RCK Krakow', 'Cracow')");
+            Sql("INSERT INTO BloodBanks (Name, City) VALUES ('RCK Katowice', 'Katowice')");
+            Sql("INSERT INTO BloodBanks (Name, City) VALUES ('RCK Warszawa', 'Warsow')");
         }
         
         public override void Down()

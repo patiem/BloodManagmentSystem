@@ -257,6 +257,7 @@
     <Compile Include="Services\BloodService.cs" />
     <Compile Include="Services\IBloodService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\BloodRequestFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
