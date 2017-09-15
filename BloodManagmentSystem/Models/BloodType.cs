@@ -1,14 +1,31 @@
-﻿namespace BloodManagmentSystem.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BloodManagmentSystem.Models
 {
     public enum BloodType
     {
-        A_Rh_plus,
-        A_Rh_minus,
-        B_Rh_plus,
-        B_Rh_minus,
-        AB_Rh_plus,
-        AB_Rh_minus,
-        O_Rh_plus,
-        O_Rh_minus
+        [Display(Name = "ARh+")]
+        A_Rh_plus = 1,
+
+        [Display(Name = "ARh-")]
+        A_Rh_minus = 2,
+
+        [Display(Name = "BRh-")]
+        B_Rh_plus = 3,
+
+        [Display(Name = "BRh+")]
+        B_Rh_minus = 4,
+
+        [Display(Name = "ABRh-")]
+        AB_Rh_plus = 5,
+
+        [Display(Name = "ABRh+")]
+        AB_Rh_minus = 6,
+
+        [Display(Name = "0Rh-")]
+        O_Rh_plus = 7,
+
+        [Display(Name = "0Rh+")]
+        O_Rh_minus = 8
     }
 }
