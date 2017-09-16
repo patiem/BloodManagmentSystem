@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201709151305425_AddDonorEntity.Designer.cs">
       <DependentUpon>201709151305425_AddDonorEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709161116402_SetMaxStringLengthForDonorName.cs" />
+    <Compile Include="Migrations\201709161116402_SetMaxStringLengthForDonorName.Designer.cs">
+      <DependentUpon>201709161116402_SetMaxStringLengthForDonorName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Donor.cs" />
@@ -356,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709151305425_AddDonorEntity.resx">
       <DependentUpon>201709151305425_AddDonorEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709161116402_SetMaxStringLengthForDonorName.resx">
+      <DependentUpon>201709161116402_SetMaxStringLengthForDonorName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
