@@ -229,6 +229,7 @@
     <Compile Include="Models\BloodBank.cs" />
     <Compile Include="Models\BloodRequest.cs" />
     <Compile Include="Models\BloodType.cs" />
+    <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InstitutionUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -314,7 +315,7 @@
     <Content Include="Views\Donor\Create.cshtml" />
     <Content Include="Views\Email\Index.cshtml" />
     <Content Include="Views\Email\Sent.cshtml" />
-    <Content Include="Views\Email\email-request.cshtml" />
+    <Content Include="Views\Email\confirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
