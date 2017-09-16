@@ -224,6 +224,10 @@
     <Compile Include="Controllers\BloodRequestController.cs" />
     <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Repositories\DonorRepository.cs" />
+    <Compile Include="Services\DonorService.cs" />
+    <Compile Include="Repositories\IDonorRepository.cs" />
+    <Compile Include="Services\IDonorService.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

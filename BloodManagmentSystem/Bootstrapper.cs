@@ -19,6 +19,8 @@ namespace Bootstrapper
             var container = new UnityContainer();
             container.RegisterType<IBloodService, BloodService>();
             container.RegisterType<IBloodRepository, BloodRepository>();
+            container.RegisterType<IDonorService, DonorService>();
+            container.RegisterType<IDonorRepository, DonorRepository>();
             return container;
         }
     }
