@@ -1,11 +1,12 @@
-﻿using System.Net.Mail;
+﻿using BloodManagmentSystem.Models;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace BloodManagmentSystem.Services
 {
     public class MyEmailService
     {
-        public async Task<bool> SendEmailAsync(string modelTo, string modelMessage, string modelSubject)
+        public async Task<bool> SendEmailAsync(string modelTo, string modelMessage, string modelSubject, Donor donor)
         {
             var from = new MailAddress("bms.mailingservice@gmail.com");
             var to = new MailAddress(modelTo);

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BloodManagmentSystem.ViewModel
+namespace BloodManagmentSystem.ViewModels
 {
     public class EmailFormModel
     {

@@ -1,6 +1,6 @@
 ﻿using BloodManagmentSystem.Models;
 using BloodManagmentSystem.Services;
-using BloodManagmentSystem.ViewModel;
+using BloodManagmentSystem.ViewModels;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -9,6 +9,7 @@ namespace BloodManagmentSystem.Controllers
     public class EmailController : Controller
     {
         // GET
+        [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -25,7 +26,7 @@ namespace BloodManagmentSystem.Controllers
             model.To = donor.Email;
             model.Subject = "BMS request confirmation mail";
             var emailService = new MyEmailService();
-            await emailService.SendEmailAsync(model.To, model.Message, model.Subject);
+            await emailService.SendEmailAsync(model.To, model.Message, model.Subject, donor);
 
             return RedirectToAction("Index");
         }
