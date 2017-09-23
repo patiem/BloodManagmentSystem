@@ -8,7 +8,13 @@ namespace BloodManagmentSystem.Controllers
 {
     public class EmailController : Controller
     {
-        // GET
+        private readonly IUnitOfWork _unitOfWork;
+
+        public EmailController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
         [Authorize]
         public ActionResult Index()
         {
@@ -22,11 +28,16 @@ namespace BloodManagmentSystem.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var donor = new Donor("Mike", "cbmlody@gmail.com");
-            model.To = donor.Email;
+            var donor = new Donor
+            {
+                Name = "Mike",
+                Email = "cbmlody@gmail.com",
+                Type = BloodType.A_Rh_plus
+            };
+
             model.Subject = "BMS request confirmation mail";
             var emailService = new MyEmailService();
-            await emailService.SendEmailAsync(model.To, model.Message, model.Subject, donor);
+            await emailService.SendEmailAsync(model.Message, model.Subject, donor);
 
             return RedirectToAction("Index");
         }

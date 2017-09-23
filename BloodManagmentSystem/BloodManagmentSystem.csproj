@@ -236,6 +236,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\EmailController.cs" />
     <Compile Include="Controllers\BloodRequestController.cs" />
     <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
@@ -271,7 +272,11 @@
     <Compile Include="Models\InstitutionUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DonorRepository.cs" />
+    <Compile Include="Repositories\IDonorRepository.cs" />
+    <Compile Include="Services\IUnitOfWork.cs" />
     <Compile Include="Services\MyEmailService.cs" />
+    <Compile Include="Services\UnitOfWork.cs" />
     <Compile Include="ViewModels\EmailFormModel.cs" />
     <Compile Include="Repositories\BloodRepository.cs" />
     <Compile Include="Repositories\IBloodRepository.cs" />

@@ -6,10 +6,10 @@ namespace BloodManagmentSystem.Services
 {
     public class MyEmailService
     {
-        public async Task<bool> SendEmailAsync(string modelTo, string modelMessage, string modelSubject, Donor donor)
+        public async Task<bool> SendEmailAsync(string modelMessage, string modelSubject, Donor donor)
         {
             var from = new MailAddress("bms.mailingservice@gmail.com");
-            var to = new MailAddress(modelTo);
+            var to = new MailAddress(donor.Email);
 
             using (var mail = new MailMessage(from, to))
             {
