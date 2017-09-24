@@ -1,4 +1,6 @@
 using BloodManagmentSystem.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BloodManagmentSystem.Repositories
 {
@@ -19,6 +21,13 @@ namespace BloodManagmentSystem.Repositories
         public void Save()
         {
             _context.SaveChanges();
+        }
+
+        public IEnumerable<Donor> GetAvailableDonorsWithMatchingBloodType(BloodType bloodType)
+        {
+            return _context.Donors
+                .Where(d => d.BloodType == bloodType)
+                .ToList();
         }
     }
 }

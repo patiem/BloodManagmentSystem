@@ -1,36 +1,55 @@
-﻿using BloodManagmentSystem.Services;
+﻿using BloodManagmentSystem.Models;
+using BloodManagmentSystem.Repositories;
+using Postal;
 using System.Web.Mvc;
 
 namespace BloodManagmentSystem.Controllers
 {
     public class EmailController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IDonorRepository _donorRepository;
 
-        public EmailController(IUnitOfWork unitOfWork)
+        public EmailController()
         {
-            _unitOfWork = unitOfWork;
+            _donorRepository = new DonorRepository();
         }
 
-        [Authorize]
         public ActionResult Index()
         {
             return View();
         }
 
-//        [HttpPost]
-//        [ValidateAntiForgeryToken]
-//        public async Task<ActionResult> Index(EmailFormModel model)
-//        {
-//            if (!ModelState.IsValid)
-//                return View(model);
-//
-//            
-//            model.Subject = "BMS request confirmation mail";
-//            var emailService = new MyEmailService();
-//            await emailService.SendEmailAsync(model.Message, model.Subject, donor);
-//
-//            return RedirectToAction("Index");
-//        }
+        public ActionResult Preview()
+        {
+            dynamic email = new DonorConfirmationEmail("Confirmation")
+            {
+                Donor = new Donor
+                {
+                    BloodType = BloodType.AB_Rh_minus,
+                    City = "Krakow",
+                    Email = "cbmlody@gmail.com",
+                    Id = 1,
+                    Name = "Edward"
+                }
+            };
+
+            return new EmailViewResult(email);
+        }
+
+        public ActionResult SendEmail(BloodType bloodType)
+        {
+            var donors = _donorRepository.GetAvailableDonorsWithMatchingBloodType(bloodType);
+
+            foreach (var donor in donors)
+            {
+                dynamic email = new DonorConfirmationEmail("Confirmation")
+                {
+                    Donor = donor
+                };
+                email.Send();
+            }
+
+            return RedirectToAction("Index", "Email");
+        }
     }
 }

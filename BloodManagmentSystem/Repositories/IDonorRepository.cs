@@ -1,4 +1,5 @@
 using BloodManagmentSystem.Models;
+using System.Collections.Generic;
 
 namespace BloodManagmentSystem.Repositories
 {
@@ -6,5 +7,6 @@ namespace BloodManagmentSystem.Repositories
     {
         void Add(Donor donor);
         void Save();
+        IEnumerable<Donor> GetAvailableDonorsWithMatchingBloodType(BloodType bloodType);
     }
 }
