@@ -1,7 +1,4 @@
-﻿using BloodManagmentSystem.Models;
-using BloodManagmentSystem.Services;
-using BloodManagmentSystem.ViewModels;
-using System.Threading.Tasks;
+﻿using BloodManagmentSystem.Services;
 using System.Web.Mvc;
 
 namespace BloodManagmentSystem.Controllers
@@ -21,25 +18,19 @@ namespace BloodManagmentSystem.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Index(EmailFormModel model)
-        {
-            if (!ModelState.IsValid)
-                return View(model);
-
-            var donor = new Donor
-            {
-                Name = "Mike",
-                Email = "cbmlody@gmail.com",
-                Type = BloodType.A_Rh_plus
-            };
-
-            model.Subject = "BMS request confirmation mail";
-            var emailService = new MyEmailService();
-            await emailService.SendEmailAsync(model.Message, model.Subject, donor);
-
-            return RedirectToAction("Index");
-        }
+//        [HttpPost]
+//        [ValidateAntiForgeryToken]
+//        public async Task<ActionResult> Index(EmailFormModel model)
+//        {
+//            if (!ModelState.IsValid)
+//                return View(model);
+//
+//            
+//            model.Subject = "BMS request confirmation mail";
+//            var emailService = new MyEmailService();
+//            await emailService.SendEmailAsync(model.Message, model.Subject, donor);
+//
+//            return RedirectToAction("Index");
+//        }
     }
 }

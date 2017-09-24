@@ -12,7 +12,6 @@ namespace BloodManagmentSystem.Services
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
-            Donors = new DonorRepository(context);    
         }
     }
 }
