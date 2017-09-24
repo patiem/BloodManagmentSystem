@@ -241,6 +241,10 @@
     <Compile Include="Controllers\DonorController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Repositories\DonorRepository.cs" />
+    <Compile Include="Services\DonorService.cs" />
+    <Compile Include="Repositories\IDonorRepository.cs" />
+    <Compile Include="Services\IDonorService.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -261,8 +265,17 @@
     <Compile Include="Migrations\201709150934402_PopulateDBWithBloodBankExemple.Designer.cs">
       <DependentUpon>201709150934402_PopulateDBWithBloodBankExemple.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709151305425_AddDonorEntity.cs" />
+    <Compile Include="Migrations\201709151305425_AddDonorEntity.Designer.cs">
+      <DependentUpon>201709151305425_AddDonorEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709161116402_SetMaxStringLengthForDonorName.cs" />
+    <Compile Include="Migrations\201709161116402_SetMaxStringLengthForDonorName.Designer.cs">
+      <DependentUpon>201709161116402_SetMaxStringLengthForDonorName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\BloodBank.cs" />
     <Compile Include="Models\BloodRequest.cs" />
@@ -382,6 +395,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709150934402_PopulateDBWithBloodBankExemple.resx">
       <DependentUpon>201709150934402_PopulateDBWithBloodBankExemple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709151305425_AddDonorEntity.resx">
+      <DependentUpon>201709151305425_AddDonorEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709161116402_SetMaxStringLengthForDonorName.resx">
+      <DependentUpon>201709161116402_SetMaxStringLengthForDonorName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
